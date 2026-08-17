@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>我的个人主页</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- 全局导航栏 -->
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo">你的名字</a>
+      <nav class="nav-links">
+        <a href="#about">关于我</a>
+        <a href="#skills">技能</a>
+        <a href="#projects">项目</a>
+        <a href="#contact">联系</a>
+      </nav>
+      <button id="theme-toggle" class="theme-toggle" aria-label="切换主题">🌙</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">你好，我是你的名字。</h1>
+      <p class="hero-subtitle">一句话介绍自己。热爱创造的前端开发者 / 设计师 / 学生。</p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-filled">查看我的作品</a>
+        <a href="#contact" class="btn btn-outlined">联系我</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 关于我 -->
+  <section id="about" class="section">
+    <div class="content">
+      <h2 class="section-title">关于我</h2>
+      <p class="section-subtitle">简单介绍你的背景与热情所在。</p>
+      <p class="section-body">
+        在这里写下你的个人简介。介绍你的背景、经历、兴趣爱好，
+        以及你正在做的事情和未来的目标。让访客更好地了解你。
+      </p>
+      <ul class="info-list">
+        <li><span class="info-label">📍 所在地</span><span>你的城市</span></li>
+        <li><span class="info-label">💼 职业</span><span>你的职业</span></li>
+        <li><span class="info-label">🎓 教育</span><span>你的学校</span></li>
+        <li><span class="info-label">📧 邮箱</span><span>your@email.com</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 技能 -->
+  <section id="skills" class="section section-frost">
+    <div class="content">
+      <h2 class="section-title">我的技能</h2>
+      <p class="section-subtitle">我擅长并持续精进的领域。</p>
+      <div class="skills">
+        <div class="skill">
+          <div class="skill-info"><span>技能名称 1</span><span>90%</span></div>
+          <div class="skill-track"><div class="skill-fill" style="width: 90%"></div></div>
+        </div>
+        <div class="skill">
+          <div class="skill-info"><span>技能名称 2</span><span>80%</span></div>
+          <div class="skill-track"><div class="skill-fill" style="width: 80%"></div></div>
+        </div>
+        <div class="skill">
+          <div class="skill-info"><span>技能名称 3</span><span>75%</span></div>
+          <div class="skill-track"><div class="skill-fill" style="width: 75%"></div></div>
+        </div>
+        <div class="skill">
+          <div class="skill-info"><span>技能名称 4</span><span>65%</span></div>
+          <div class="skill-track"><div class="skill-fill" style="width: 65%"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 项目 -->
+  <section id="projects" class="section">
+    <div class="content">
+      <h2 class="section-title">我的项目</h2>
+      <p class="section-subtitle">我做过的一些作品。</p>
+      <div class="projects">
+        <article class="card">
+          <div class="card-cover">
+            <img src="https://image.woshipm.com/wp-files/2026/08/Y11FaVDIO0CUlw3SNeBp.png" alt="DeepSeek V4 Pro 遇上 Grok 4.6" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <h3>DeepSeek V4 Pro 遇上 Grok 4.6，新一轮模型竞争开始 比什么？</h3>
+            <p>DeepSeek V4 Pro 和 Grok 4.6 同时进入讨论中心。有人忙着转发跑分，有人已经开始问哪个模型更强，也有人把它们理解成中美大模型竞争的新一轮正面对决。</p>
+            <a href="https://www.woshipm.com/ai/6446425.html" target="_blank" rel="noopener" class="card-link">阅读原文 →</a>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-cover">
+            <img src="https://image.woshipm.com/2026/08/09/b9c8152c-9400-11f1-b8bd-00163e09d72f.png" alt="夸克 S1 卖到缺货之后，AI 眼镜还要证明什么" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <h3>夸克 S1 卖到缺货之后，AI 眼镜还要证明什么</h3>
+            <p>2025 年 11 月 27 日，夸克正式发布 AI 眼镜 S1，起售价 3799 元。卖到缺货之后，AI 眼镜这个品类还需要证明什么？</p>
+            <a href="https://www.woshipm.com/ai/6443397.html" target="_blank" rel="noopener" class="card-link">阅读原文 →</a>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-cover">🎨</div>
+          <div class="card-body">
+            <h3>项目名称 3</h3>
+            <p>项目简介：简单描述这个项目是做什么的、用了什么技术、解决了什么问题。</p>
+            <a href="#" class="card-link">了解更多 →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 联系 -->
+  <section id="contact" class="section section-ice">
+    <div class="content contact-block">
+      <h2 class="section-title">联系我</h2>
+      <p class="section-subtitle">如果你有合作想法或想打个招呼，欢迎随时联系。</p>
+      <div class="contact-links">
+        <a href="mailto:your@email.com" class="btn btn-filled">📧 发邮件</a>
+        <a href="https://github.com/" target="_blank" rel="noopener" class="btn btn-outlined">🐙 GitHub</a>
+        <a href="https://weibo.com/" target="_blank" rel="noopener" class="btn btn-outlined">💬 微博</a>
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener" class="btn btn-outlined">💼 领英</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <p>© <span id="year"></span> 你的名字 · 保留所有权利</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
