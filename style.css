@@ -89,7 +89,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: var(--bg);
+  background: rgba(255, 255, 255, 0.72);
   border-bottom: 1px solid var(--border);
   backdrop-filter: saturate(180%) blur(20px);
 }
@@ -139,8 +139,8 @@ body {
 
 /* ============ Hero ============ */
 .hero {
-  background: var(--bg-alt);
-  padding: 120px 24px 96px;
+  background: transparent;
+  padding: 60px 24px 48px;
   text-align: center;
 }
 
@@ -155,22 +155,44 @@ body {
   font-weight: 600;
   line-height: 1.07;
   letter-spacing: 0.011em;
+  /* 渐变流光（shimmer），参考 metasight 的渐变字 */
+  background-image: linear-gradient(
+    105deg,
+    var(--text) 0%,
+    var(--text) 30%,
+    #0071e3 42%,
+    #8d54ff 50%,
+    #0071e3 58%,
+    var(--text) 70%,
+    var(--text) 100%
+  );
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: name-shimmer 3.5s linear infinite;
 }
 
 .hero-subtitle {
-  font-size: 26px;
+  font-size: 17px;
   font-weight: 300;
   color: var(--text-secondary);
-  line-height: 1.24;
-  margin-top: 16px;
+  line-height: 1.5;
+  margin-top: 18px;
 }
 
 .hero-actions {
   display: flex;
-  gap: 16px;
+  gap: 14px;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 40px;
+  margin-top: 38px;
+}
+
+.hero .btn {
+  font-size: 16px;
+  padding: 13px 24px;
 }
 
 /* ============ 按钮（胶囊） ============ */
@@ -209,11 +231,11 @@ body {
 }
 
 .section-frost {
-  background: var(--bg-alt);
+  background: rgba(245, 245, 247, 0.55);
 }
 
 .section-ice {
-  background: var(--ice);
+  background: rgba(244, 248, 251, 0.55);
 }
 
 .section-title {
@@ -223,6 +245,11 @@ body {
   line-height: 1.14;
   letter-spacing: 0.011em;
   text-align: center;
+}
+
+/* 项目标题略小 */
+#projects .section-title {
+  font-size: 32px;
 }
 
 .section-subtitle {
@@ -265,22 +292,44 @@ body {
 
 /* ============ 技能 ============ */
 .skills {
-  max-width: 680px;
+  max-width: 720px;
   margin: 48px auto 0;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 32px;
 }
 
 .skill-info {
   display: flex;
   justify-content: space-between;
-  font-size: 14px;
+  align-items: baseline;
   margin-bottom: 8px;
 }
 
+.skill-name {
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+
+.skill-percent {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-tertiary);
+}
+
+.skill-desc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin: 0 0 14px;
+  padding-left: 12px;
+  border-left: 2px solid var(--signal-blue);
+}
+
 .skill-track {
-  height: 4px;
+  height: 5px;
   background: var(--border);
   border-radius: var(--radius-pill);
   overflow: hidden;
@@ -288,7 +337,7 @@ body {
 
 .skill-fill {
   height: 100%;
-  background: var(--signal-blue);
+  background: linear-gradient(90deg, #3080ff, #8d54ff);
   border-radius: var(--radius-pill);
   transition: width 1s ease;
 }
@@ -296,13 +345,13 @@ body {
 /* ============ 项目 ============ */
 .projects {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   margin-top: 48px;
 }
 
 .card {
-  background: var(--bg);
+  background: rgba(255, 255, 255, 0.9);
   border: 1px solid var(--border);
   border-radius: var(--radius-card);
   overflow: hidden;
@@ -315,7 +364,7 @@ body {
 }
 
 .card-cover {
-  height: 200px;
+  height: 140px;
   background: var(--bg-alt);
   display: flex;
   align-items: center;
@@ -328,27 +377,41 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.card:hover .card-cover img {
+  transform: scale(1.08);
+}
+
+/* 第一张项目图片：轻微持续动效 */
+.card:first-child .card-cover img {
+  animation: cover-drift 14s ease-in-out infinite alternate;
+}
+
+@keyframes cover-drift {
+  from { transform: scale(1) translateY(0); }
+  to { transform: scale(1.08) translateY(-8px); }
 }
 
 .card-body {
-  padding: var(--card-padding);
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
 }
 
 .card-body h3 {
-  font-size: 24px;
+  flex: 1;
+  font-size: 18px;
   font-weight: 600;
+  line-height: 1.4;
   letter-spacing: -0.011em;
-  margin-bottom: 8px;
-}
-
-.card-body p {
-  font-size: 14px;
-  color: var(--text-secondary);
-  line-height: 1.47;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .card-link {
+  align-self: flex-start;
+  margin-top: auto;
   color: var(--link-blue);
   text-decoration: none;
   font-size: 14px;
@@ -373,7 +436,7 @@ body {
 
 /* ============ 页脚 ============ */
 .footer {
-  background: var(--bg-alt);
+  background: rgba(245, 245, 247, 0.55);
   border-top: 1px solid var(--border);
   padding: 40px 24px;
 }
@@ -400,7 +463,7 @@ body {
   }
 
   .hero-title {
-    font-size: 40px;
+    font-size: 44px;
   }
 
   .hero-subtitle {
@@ -409,5 +472,203 @@ body {
 
   .section-title {
     font-size: 32px;
+  }
+
+  #projects .section-title {
+    font-size: 28px;
+  }
+
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ============================================
+   极光背景 + 纸张触感（参考 metasight.cloud）
+   ============================================ */
+.aurora-bg {
+  position: fixed;
+  inset: -20px;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    /* 纸张纹理（触感） */
+    repeating-linear-gradient(100deg,
+      rgba(0, 0, 0, 0.035) 0%,
+      rgba(0, 0, 0, 0.035) 7%,
+      rgba(0, 0, 0, 0) 10%,
+      rgba(0, 0, 0, 0) 12%,
+      rgba(0, 0, 0, 0.035) 16%),
+    /* 极光渐变 */
+    repeating-linear-gradient(100deg,
+      rgba(48, 128, 255, 0.30) 10%,
+      rgba(164, 179, 255, 0.30) 15%,
+      rgba(144, 197, 253, 0.30) 20%,
+      rgba(221, 214, 254, 0.30) 25%,
+      rgba(84, 165, 250, 0.30) 30%);
+  background-size: 300%, 200%;
+  background-position: 50% 50%, 50% 50%;
+  animation: aurora 60s linear infinite;
+  filter: blur(9px);
+}
+
+@keyframes aurora {
+  0% { background-position: 50% 50%, 50% 50%; }
+  100% { background-position: 350% 50%, 350% 50%; }
+}
+
+@keyframes name-shimmer {
+  0% { background-position: 250% center; }
+  100% { background-position: -150% center; }
+}
+
+/* 隐藏系统指针（改用机器人光标） */
+html, body, a, button, input, textarea, select, label, summary,
+[role="button"], [role="link"], [contenteditable="true"] {
+  cursor: none !important;
+}
+
+/* 深色模式下的极光与半透明面板 */
+[data-theme="dark"] .aurora-bg {
+  background-image:
+    repeating-linear-gradient(100deg,
+      rgba(255, 255, 255, 0.05) 0%,
+      rgba(255, 255, 255, 0.05) 7%,
+      rgba(0, 0, 0, 0) 10%,
+      rgba(0, 0, 0, 0) 12%,
+      rgba(255, 255, 255, 0.05) 16%),
+    repeating-linear-gradient(100deg,
+      rgba(48, 128, 255, 0.22) 10%,
+      rgba(164, 179, 255, 0.22) 15%,
+      rgba(144, 197, 253, 0.22) 20%,
+      rgba(221, 214, 254, 0.22) 25%,
+      rgba(84, 165, 250, 0.22) 30%);
+}
+[data-theme="dark"] .nav { background: rgba(0, 0, 0, 0.55); }
+[data-theme="dark"] .section-frost,
+[data-theme="dark"] .footer { background: rgba(29, 29, 31, 0.6); }
+[data-theme="dark"] .section-ice { background: rgba(29, 29, 31, 0.6); }
+[data-theme="dark"] .card { background: rgba(29, 29, 31, 0.9); }
+
+/* ============================================
+   机器人鼠标
+   ============================================ */
+.robot-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 2147483647;
+  font-size: 30px;
+  line-height: 1;
+  will-change: transform;
+  filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.25));
+}
+
+/* 超小屏：项目单列 */
+@media (max-width: 480px) {
+  .projects {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* ============================================
+   最近在写（参考 rui.juzi.bot 的排版）
+   ============================================ */
+.writing-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 22px;
+}
+
+.writing-title {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.09px;
+  color: #222222;
+}
+
+.writing-more {
+  font-size: 13px;
+  color: #444444;
+  text-decoration: none;
+}
+
+.writing-more:hover {
+  color: #d26911;
+}
+
+.writing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.writing-card {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #e6e4dd;
+}
+
+.writing-card-title {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.24px;
+  margin: 0 0 8px;
+}
+
+.writing-card-title a {
+  color: #222222;
+  text-decoration: none;
+}
+
+.writing-card-title a:hover {
+  color: #d26911;
+}
+
+.writing-meta {
+  font-size: 13px;
+  color: #777777;
+  margin: 0 0 14px;
+}
+
+.writing-cat {
+  font-size: 12px;
+  color: #444444;
+  background: #f6f6f3;
+  padding: 1px 8px;
+  border-radius: 3px;
+}
+
+.writing-excerpt {
+  font-size: 15px;
+  line-height: 1.85;
+  color: #444444;
+  margin: 0 0 14px;
+  flex: 1;
+}
+
+.writing-more-link a {
+  color: #d26911;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.writing-more-link a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .writing-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .writing-grid {
+    grid-template-columns: repeat(1, 1fr);
   }
 }

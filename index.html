@@ -7,14 +7,17 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- 极光背景层（纸张触感 + 渐变） -->
+  <div class="aurora-bg" aria-hidden="true"></div>
+
   <!-- 全局导航栏 -->
   <header class="nav">
     <div class="nav-inner">
       <a href="#home" class="nav-logo">你的名字</a>
       <nav class="nav-links">
+        <a href="#projects">项目</a>
         <a href="#about">关于我</a>
         <a href="#skills">技能</a>
-        <a href="#projects">项目</a>
         <a href="#contact">联系</a>
       </nav>
       <button id="theme-toggle" class="theme-toggle" aria-label="切换主题">🌙</button>
@@ -24,55 +27,13 @@
   <!-- Hero -->
   <section id="home" class="hero">
     <div class="hero-content">
-      <h1 class="hero-title">你好，我是你的名字。</h1>
-      <p class="hero-subtitle">一句话介绍自己。热爱创造的前端开发者 / 设计师 / 学生。</p>
+      <h1 class="hero-title">程荣涛（Wynn）</h1>
+      <p class="hero-subtitle">Independent Developer &amp; AI Explorer.<br>Building with AI, learning in public, turning ideas into products.</p>
       <div class="hero-actions">
-        <a href="#projects" class="btn btn-filled">查看我的作品</a>
-        <a href="#contact" class="btn btn-outlined">联系我</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- 关于我 -->
-  <section id="about" class="section">
-    <div class="content">
-      <h2 class="section-title">关于我</h2>
-      <p class="section-subtitle">简单介绍你的背景与热情所在。</p>
-      <p class="section-body">
-        在这里写下你的个人简介。介绍你的背景、经历、兴趣爱好，
-        以及你正在做的事情和未来的目标。让访客更好地了解你。
-      </p>
-      <ul class="info-list">
-        <li><span class="info-label">📍 所在地</span><span>你的城市</span></li>
-        <li><span class="info-label">💼 职业</span><span>你的职业</span></li>
-        <li><span class="info-label">🎓 教育</span><span>你的学校</span></li>
-        <li><span class="info-label">📧 邮箱</span><span>your@email.com</span></li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- 技能 -->
-  <section id="skills" class="section section-frost">
-    <div class="content">
-      <h2 class="section-title">我的技能</h2>
-      <p class="section-subtitle">我擅长并持续精进的领域。</p>
-      <div class="skills">
-        <div class="skill">
-          <div class="skill-info"><span>技能名称 1</span><span>90%</span></div>
-          <div class="skill-track"><div class="skill-fill" style="width: 90%"></div></div>
-        </div>
-        <div class="skill">
-          <div class="skill-info"><span>技能名称 2</span><span>80%</span></div>
-          <div class="skill-track"><div class="skill-fill" style="width: 80%"></div></div>
-        </div>
-        <div class="skill">
-          <div class="skill-info"><span>技能名称 3</span><span>75%</span></div>
-          <div class="skill-track"><div class="skill-fill" style="width: 75%"></div></div>
-        </div>
-        <div class="skill">
-          <div class="skill-info"><span>技能名称 4</span><span>65%</span></div>
-          <div class="skill-track"><div class="skill-fill" style="width: 65%"></div></div>
-        </div>
+        <a href="https://github.com/rongtaocheng32-ctrl" target="_blank" rel="noopener" class="btn btn-outlined">🐙 GitHub</a>
+        <a href="https://www.woshipm.com/u/1685240" target="_blank" rel="noopener" class="btn btn-outlined">📝 人人都是产品经理</a>
+        <a href="https://mp.weixin.qq.com/cgi-bin/appmsgcopyright?action=orignal&amp;type=1&amp;token=1497111088&amp;lang=zh_CN" target="_blank" rel="noopener" class="btn btn-outlined">💬 微信公众号</a>
+        <a href="mailto:3242938156@qq.com" class="btn btn-outlined">📧 发邮件</a>
       </div>
     </div>
   </section>
@@ -89,7 +50,7 @@
           </div>
           <div class="card-body">
             <h3>DeepSeek V4 Pro 遇上 Grok 4.6，新一轮模型竞争开始 比什么？</h3>
-            <p>DeepSeek V4 Pro 和 Grok 4.6 同时进入讨论中心。有人忙着转发跑分，有人已经开始问哪个模型更强，也有人把它们理解成中美大模型竞争的新一轮正面对决。</p>
+            
             <a href="https://www.woshipm.com/ai/6446425.html" target="_blank" rel="noopener" class="card-link">阅读原文 →</a>
           </div>
         </article>
@@ -99,18 +60,119 @@
           </div>
           <div class="card-body">
             <h3>夸克 S1 卖到缺货之后，AI 眼镜还要证明什么</h3>
-            <p>2025 年 11 月 27 日，夸克正式发布 AI 眼镜 S1，起售价 3799 元。卖到缺货之后，AI 眼镜这个品类还需要证明什么？</p>
+            
             <a href="https://www.woshipm.com/ai/6443397.html" target="_blank" rel="noopener" class="card-link">阅读原文 →</a>
           </div>
         </article>
         <article class="card">
-          <div class="card-cover">🎨</div>
+          <div class="card-cover">
+            <img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/kw4aRHuaAdiao2n99cI3RHPiaqZog62k2ib8qcD2X9UQrby9w268YbibMobRNnpZUhUANQBJevOyeqeuMttJpjC5xV3pWriawyCjFPzIrBnogNic0/0?wx_fmt=jpeg" alt="从图灵到智能体，普通人怎样真正进入 AI 行业" loading="lazy" />
+          </div>
           <div class="card-body">
-            <h3>项目名称 3</h3>
-            <p>项目简介：简单描述这个项目是做什么的、用了什么技术、解决了什么问题。</p>
-            <a href="#" class="card-link">了解更多 →</a>
+            <h3>从图灵到智能体，普通人怎样真正进入 AI 行业</h3>
+            
+            <a href="https://mp.weixin.qq.com/s/s1lw6zDfUzntcsAKJObPsA" target="_blank" rel="noopener" class="card-link">阅读原文 →</a>
           </div>
         </article>
+        <article class="card">
+          <div class="card-cover">
+            <img src="https://mmbiz.qpic.cn/mmbiz_jpg/kw4aRHuaAdjoRwdEcAKLB8JqlydkugjgXKibMjUAXXI0oGwpeLTjicNLkMIM6XB71W8M686kBsaY5ricUEt0x5ibJXHDdc8oGp09CibCrPC7vnkA/0?wx_fmt=jpeg" alt="AI 用着用着开始收费，钱究竟花在了哪里" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <h3>AI 用着用着开始收费，钱究竟花在了哪里</h3>
+            
+            <a href="https://mp.weixin.qq.com/s/TLaY73EAtGSIAYSm7HVLLw" target="_blank" rel="noopener" class="card-link">阅读原文 →</a>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-cover">
+            <img src="https://mmbiz.qpic.cn/mmbiz_jpg/kw4aRHuaAdjhZM2icQ94mxRmQm3S3qmjx9B3PntKRvIaMaibeX2VY8jibuMr4SckMebPeFxWQaqXO8L9L8aDicEicj63ibX82oprIS1EicAm3UVaHE/0?wx_fmt=jpeg" alt="DeepSeek Harness v0.1 开源" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <h3>DeepSeek Harness v0.1 开源，国产 AI 开始竞争“模型之外”的执行系统</h3>
+            
+            <a href="https://mp.weixin.qq.com/s/NBOUtExrq_nUN7oCQP1XAA" target="_blank" rel="noopener" class="card-link">阅读原文 →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 最近在写 -->
+  <section id="writing" class="section">
+    <div class="content">
+      <div class="writing-head">
+        <h2 class="writing-title">最近在写</h2>
+        <a href="#projects" class="writing-more">全部 →</a>
+      </div>
+      <div class="writing-grid">
+        <article class="writing-card">
+          <h3 class="writing-card-title"><a href="https://www.woshipm.com/ai/6446425.html" target="_blank" rel="noopener">DeepSeek V4 Pro 遇上 Grok 4.6，新一轮模型竞争开始 比什么？</a></h3>
+          <div class="writing-meta"><span class="writing-cat">大模型</span></div>
+          <p class="writing-excerpt">DeepSeek V4 Pro 和 Grok 4.6 同时进入讨论中心。有人忙着转发跑分，有人已经开始问哪个模型更强，也有人把它们理解成中美大模型竞争的新一轮正面对决。</p>
+          <div class="writing-more-link"><a href="https://www.woshipm.com/ai/6446425.html" target="_blank" rel="noopener">继续读 →</a></div>
+        </article>
+        <article class="writing-card">
+          <h3 class="writing-card-title"><a href="https://www.woshipm.com/ai/6443397.html" target="_blank" rel="noopener">夸克 S1 卖到缺货之后，AI 眼镜还要证明什么</a></h3>
+          <div class="writing-meta"><span class="writing-cat">AI 硬件</span></div>
+          <p class="writing-excerpt">2025 年 11 月 27 日，夸克正式发布 AI 眼镜 S1，起售价 3799 元。卖到缺货之后，AI 眼镜这个品类还需要证明什么？</p>
+          <div class="writing-more-link"><a href="https://www.woshipm.com/ai/6443397.html" target="_blank" rel="noopener">继续读 →</a></div>
+        </article>
+        <article class="writing-card">
+          <h3 class="writing-card-title"><a href="https://mp.weixin.qq.com/s/s1lw6zDfUzntcsAKJObPsA" target="_blank" rel="noopener">从图灵到智能体，普通人怎样真正进入 AI 行业</a></h3>
+          <div class="writing-meta"><span class="writing-cat">行业观察</span></div>
+          <p class="writing-excerpt">普通人怎样了解并真正进入 AI 行业</p>
+          <div class="writing-more-link"><a href="https://mp.weixin.qq.com/s/s1lw6zDfUzntcsAKJObPsA" target="_blank" rel="noopener">继续读 →</a></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 关于我 -->
+  <section id="about" class="section">
+    <div class="content">
+      <h2 class="section-title">关于我</h2>
+      <p class="section-subtitle">信仰技术变革，践行长期主义——做时间的朋友，做AI的译者</p>
+      <ul class="info-list">
+        <li><span class="info-label">📍 所在地</span><span>北京</span></li>
+        <li><span class="info-label">💼 职业</span><span>AI产品经理</span></li>
+        <li><span class="info-label">🎓 教育</span><span>硕士</span></li>
+        <li><span class="info-label">📧 邮箱</span><span>3242938156@qq.com</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 技能 -->
+  <section id="skills" class="section section-frost">
+    <div class="content">
+      <h2 class="section-title">我的技能</h2>
+      <p class="section-subtitle">我擅长并持续精进的领域。</p>
+      <div class="skills">
+        <div class="skill">
+          <div class="skill-info"><span class="skill-name">技术理解能力</span><span class="skill-percent">90%</span></div>
+          <p class="skill-desc">懂 AI 基础概念，能和研发团队高效沟通，把产品需求转化为技术可执行的任务，比如知道用自然语言处理技术解决智能客服对话问题。</p>
+          <div class="skill-track"><div class="skill-fill" style="width: 90%"></div></div>
+        </div>
+        <div class="skill">
+          <div class="skill-info"><span class="skill-name">产品设计能力</span><span class="skill-percent">80%</span></div>
+          <p class="skill-desc">具备传统产品经理的需求分析、原型设计、流程规划能力，还要结合 AI 特性，设计出有智能交互、自动决策等功能的产品，像规划 AI 推荐系统的推荐逻辑、展示形式。</p>
+          <div class="skill-track"><div class="skill-fill" style="width: 80%"></div></div>
+        </div>
+        <div class="skill">
+          <div class="skill-info"><span class="skill-name">数据洞察能力</span><span class="skill-percent">75%</span></div>
+          <p class="skill-desc">会分析产品数据，从数据中找优化方向，比如发现推荐系统点击率低，能排查是模型问题还是用户触达环节问题。</p>
+          <div class="skill-track"><div class="skill-fill" style="width: 75%"></div></div>
+        </div>
+        <div class="skill">
+          <div class="skill-info"><span class="skill-name">跨领域沟通能力</span><span class="skill-percent">65%</span></div>
+          <p class="skill-desc">能协调各方资源，推动项目顺利落地。</p>
+          <div class="skill-track"><div class="skill-fill" style="width: 65%"></div></div>
+        </div>
+        <div class="skill">
+          <div class="skill-info"><span class="skill-name">行业感知能力</span><span class="skill-percent">70%</span></div>
+          <p class="skill-desc">紧盯 AI 行业趋势和所在领域的业务需求，让产品既技术前沿又贴合市场。</p>
+          <div class="skill-track"><div class="skill-fill" style="width: 70%"></div></div>
+        </div>
       </div>
     </div>
   </section>
@@ -121,10 +183,10 @@
       <h2 class="section-title">联系我</h2>
       <p class="section-subtitle">如果你有合作想法或想打个招呼，欢迎随时联系。</p>
       <div class="contact-links">
-        <a href="mailto:your@email.com" class="btn btn-filled">📧 发邮件</a>
-        <a href="https://github.com/" target="_blank" rel="noopener" class="btn btn-outlined">🐙 GitHub</a>
-        <a href="https://weibo.com/" target="_blank" rel="noopener" class="btn btn-outlined">💬 微博</a>
-        <a href="https://www.linkedin.com/" target="_blank" rel="noopener" class="btn btn-outlined">💼 领英</a>
+        <a href="mailto:3242938156@qq.com" class="btn btn-filled">📧 发邮件</a>
+        <a href="https://github.com/rongtaocheng32-ctrl" target="_blank" rel="noopener" class="btn btn-outlined">🐙 GitHub</a>
+        <a href="https://www.woshipm.com/u/1685240" target="_blank" rel="noopener" class="btn btn-outlined">📝 人人都是产品经理</a>
+        <a href="https://mp.weixin.qq.com/cgi-bin/appmsgcopyright?action=orignal&amp;type=1&amp;token=1497111088&amp;lang=zh_CN" target="_blank" rel="noopener" class="btn btn-outlined">💬 微信公众号</a>
       </div>
     </div>
   </section>
