@@ -14,7 +14,10 @@ themeToggle.addEventListener('click', () => {
   root.setAttribute('data-theme', next);
   localStorage.setItem('theme', next);
   themeToggle.textContent = next === 'dark' ? '☀️' : '🌙';
+  themeToggle.setAttribute('aria-pressed', String(next === 'dark'));
 });
+
+themeToggle.setAttribute('aria-pressed', String(root.getAttribute('data-theme') === 'dark'));
 
 // 页脚年份
 document.getElementById('year').textContent = new Date().getFullYear();
@@ -41,6 +44,11 @@ skillFills.forEach((fill) => observer.observe(fill));
 
 // ===== 机器人鼠标 =====
 (function () {
+  const canUseRobotCursor = window.matchMedia(
+    '(pointer: fine) and (prefers-reduced-motion: no-preference)'
+  ).matches;
+  if (!canUseRobotCursor) return;
+
   const el = document.createElement('div');
   el.setAttribute('aria-hidden', 'true');
   el.className = 'robot-cursor';
