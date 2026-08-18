@@ -522,10 +522,12 @@ body {
   100% { background-position: -150% center; }
 }
 
-/* 隐藏系统指针（改用机器人光标） */
-html, body, a, button, input, textarea, select, label, summary,
-[role="button"], [role="link"], [contenteditable="true"] {
-  cursor: none !important;
+/* 只在精确指针且用户允许动效时启用机器人光标 */
+@media (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  html, body, a, button, input, textarea, select, label, summary,
+  [role="button"], [role="link"], [contenteditable="true"] {
+    cursor: none !important;
+  }
 }
 
 /* 深色模式下的极光与半透明面板 */
@@ -563,6 +565,15 @@ html, body, a, button, input, textarea, select, label, summary,
   line-height: 1;
   will-change: transform;
   filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.25));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /* 超小屏：项目单列 */
